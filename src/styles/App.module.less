@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  :global {
+    .area {
+      flex: 1;
+      border: 1px solid #545454;
+      height: 100vh;
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+      &:first-of-type {
+        background-color: #e3ffa5;
+      }
+      &:last-of-type {
+        background-color: cornflowerblue;
+      }
+    }
+  }
+}
