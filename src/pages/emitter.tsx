@@ -2,8 +2,8 @@ import {
   increment,
   decrement,
   incrementByAmount,
+  incrementAsync,
 } from "../features/counter/counterSlice.ts";
-import reducers from "../features/counter/counterSlice.ts";
 import { Button, InputNumber } from "@arco-design/web-react";
 import { useAppDispatch } from "../hooks/index.ts";
 import { useState } from "react";
@@ -19,8 +19,9 @@ function Emitter({ className }) {
         incrementByAmount
       </Button>
       <InputNumber value={count} onChange={(v) => setCount(v)} />
-      <Button onClick={() => console.log(increment())}>test</Button>
-      <Button onClick={() => console.log(reducers)}>test2</Button>
+      <Button onClick={() => dispatch(incrementAsync(count))}>
+        increment async
+      </Button>
     </div>
   );
 }
